@@ -39,7 +39,7 @@ On a besoin de conserver les informations concernant :
 --------------
 #### Description du MCD : 
 
-!(MCD_CNSM.png)
+[voir image](MCD_CNSM.png)
 
 #### Les entités présentées dans ce schéma sont les suivantes : 
 
