@@ -55,31 +55,37 @@ On a besoin de conserver les informations concernant :
 - Enseignants >< Cours (Teach)
 
 un enseignant enseigne un à plusieurs cours
+
 un cours est enseigné par un et un seul enseignant
 
  - Salle de cours >< Cours (Take_place)
  
 un cours a lieu dans une et une seule salle de cours
+
 une salle de cours peut donner lieu à un à plusieurs cours
 
 - Instruments >< Etudiants (Play)
 
 un étudiant peut jouer un et un seul instrument
+
 un instrument peut être joué par un ou plusieurs étudiants
 
 - Classes >< Etudiants (Is_part_of)
 
 un étudiant fait parti d'une et une seule classe
+
 une classe peut recenser un ou plusieurs étudiants 
 
 - Etudiants >< Cours (Follow)
 
 un étudiant suit un ou plusieurs cours 
+
 un cours peut être suivi par un ou plusieurs élèves
 
 - Etudiants >< Cours (Pass_an_exam)
 
 Un étudiant passe un examen pour lequel il reçoit une note (Score) dans un ou plusieurs cours
+
 Un cours peut donner lieu à un ou plusieurs contrôles qui donne lieu à une note pour un à plusieurs étudiants
 
 #### Notes et diffcultés :
