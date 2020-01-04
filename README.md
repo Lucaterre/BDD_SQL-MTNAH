@@ -67,7 +67,7 @@ une salle de cours peut donner lieu à un à plusieurs cours
 un étudiant peut jouer un et un seul instrument
 un instrument peut être joué par un ou plusieurs étudiants
 
-- Classes >< Etudiants (Is-part-of)
+- Classes >< Etudiants (Is_part_of)
 
 un étudiant fait parti d'une et une seule classe
 une classe peut recenser un ou plusieurs étudiants 
@@ -77,7 +77,7 @@ une classe peut recenser un ou plusieurs étudiants
 un étudiant suit un ou plusieurs cours 
 un cours peut être suivi par un ou plusieurs élèves
 
-- Etudiants >< Cours (Pass-an-exam)
+- Etudiants >< Cours (Pass_an_exam)
 
 Un étudiant passe un examen pour lequel il reçoit une note (Score) dans un ou plusieurs cours
 Un cours peut donner lieu à un ou plusieurs contrôles qui donne lieu à une note pour un à plusieurs étudiants
