@@ -50,7 +50,7 @@ On a besoin de conserver les informations concernant :
 - "Cours" [COURSES] qui reçoit comme attributs : ID, Nom (Label), Coefficient, date du cours
 - "Enseignants" [TEACHERS] qui reçoit comme attributs : ID, Nom, Prénom, Date de naissance
 
-#### A propos des les associations :
+#### A propos des associations :
 
 - TEACHERS >< COURSES (Teach)
 
