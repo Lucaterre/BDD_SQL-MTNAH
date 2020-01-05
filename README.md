@@ -37,20 +37,20 @@ On a besoin de conserver les informations concernant :
 
 ## Réalisation
 --------------
-#### Description du MCD : 
+#### Description du MCD :
 
 [voir image](MCD_CNSM.png)
 
-#### Les entités présentées dans ce schéma sont les suivantes : 
+#### Les six entités présentées dans ce schéma sont les suivantes :
 
-- Etudiants [STUDENTS] qui reçoit comme attributs : ID, Nom, Prénom, Date de naissance)
-- Classes [CLASS_DEGREE] qui reçoit comme attributs : ID, Année d'étude
-- Les instruments [INSTRUMENTS] qui reçoit comme attributs : ID, Type de l'instrument (noté Label)
-- Les salles de cours [CLASSROOMS] qui reçoit comme attributs : ID, Nom, Capacité d'acceuil maximum
-- Le cours [COURSES] qui reçoit comme attributs : ID, Nom (Label), Coefficient, Jour de la semaine et une heure
-- Enseignants [TEACHERS] qui reçoit comme attributs : ID, Nom, Prénom, Date de naissance
+- "Etudiants" [STUDENTS] qui reçoit comme attributs : ID, Nom, Prénom, Date de naissance)
+- "Classe" [CLASS_DEGREE] qui reçoit comme attributs : ID, le niveau d'étude (de 1 à 5)
+- "Instruments" [INSTRUMENTS] qui reçoit comme attributs : ID, Type de l'instrument (noté Label)
+- "Salles de cours" [CLASSROOMS] qui reçoit comme attributs : ID, Nom, Capacité d'acceuil maximum
+- "Cours" [COURSES] qui reçoit comme attributs : ID, Nom (Label), Coefficient, date du cours
+- "Enseignants" [TEACHERS] qui reçoit comme attributs : ID, Nom, Prénom, Date de naissance
 
-#### A propos des les associations : 
+#### A propos des les associations :
 
 - Enseignants >< Cours (Teach)
 
@@ -59,7 +59,7 @@ un enseignant enseigne un à plusieurs cours
 un cours est enseigné par un et un seul enseignant
 
  - Salle de cours >< Cours (Take_place)
- 
+
 un cours a lieu dans une et une seule salle de cours
 
 une salle de cours peut donner lieu à un à plusieurs cours
@@ -74,26 +74,15 @@ un instrument peut être joué par un ou plusieurs étudiants
 
 un étudiant fait parti d'une et une seule classe
 
-une classe peut recenser un ou plusieurs étudiants 
+une classe peut recenser un ou plusieurs étudiants
 
 - Etudiants >< Cours (Follow)
 
-un étudiant suit un ou plusieurs cours 
+un étudiant suit un ou plusieurs cours pour lesquels il reçoit une note
 
-un cours peut être suivi par un ou plusieurs élèves
+un cours peut être suivi par un ou plusieurs élèves qui reçoivent une note
 
-- Etudiants >< Cours (Pass_an_exam)
-
-Un étudiant passe un examen pour lequel il reçoit une note (Score) dans un ou plusieurs cours
-
-Un cours peut donner lieu à un ou plusieurs contrôles qui donne lieu à une note pour un à plusieurs étudiants
 
 #### Notes et diffcultés :
 
-Pour nous aider dans l'établissement de l'association "passer un examen" entre l'étudiant et la discipline
-on peut résumer l'association par une phrase contextuelle du type : "A l'issue d'un examen ou d'un contrôle surprise, 
-la note de X/20 ou le score A,B,C...(Score, attribut de l'association pass-an-exam) a été obtenue par un étudiant (Students) dans une matière (Courses) enseigné (Teach) par un enseignant(Teacher)"
-dès lors l'association passer un examen se fait entre l'étudiant et le cours enseigné par un enseignant, et non pas un enseignant qui attribut une note à l'étudiant.
-
-
-
+- La problématique principale se situe au niveau de l'association note entre étudiants et discipline. En effet, on considère ici qu'un étudiant suit effectivement et valide un cours par l'obtention d'une note (contrainte obligatoire). Pour nous aider dans l'établissement de cette association "suivre un cours" entre l'étudiant et la discipline on peut résumer l'association par une phrase contextuelle du type : "A l'issue d'un examen ou d'un contrôle surprise, la note de X/20 ou le score A,B,C...(Score, attribut et condition de "suivre un cours" ou "Follow") a été obtenue par un étudiant (Students) dans une matière (Courses) enseignée (Teach) par un enseignant(Teacher)".
