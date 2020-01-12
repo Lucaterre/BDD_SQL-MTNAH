@@ -50,33 +50,33 @@ On a besoin de conserver les informations concernant :
 - "Cours" [COURSES] qui reçoit comme attributs : ID, Nom (Label), Coefficient, date du cours
 - "Enseignants" [TEACHERS] qui reçoit comme attributs : ID, Nom, Prénom, Date de naissance
 
-#### A propos des les associations :
+#### A propos des associations :
 
-- Enseignants >< Cours (Teach)
+- TEACHERS >< COURSES (Teach)
 
 un enseignant enseigne un à plusieurs cours
 
 un cours est enseigné par un et un seul enseignant
 
- - Salle de cours >< Cours (Take_place)
+ - CLASSROOMS >< COURSES (Take_place)
 
 un cours a lieu dans une et une seule salle de cours
 
 une salle de cours peut donner lieu à un à plusieurs cours
 
-- Instruments >< Etudiants (Play)
+- INSTRUMENTS >< STUDENTS (Play)
 
 un étudiant peut jouer un et un seul instrument
 
 un instrument peut être joué par un ou plusieurs étudiants
 
-- Classes >< Etudiants (Is_part_of)
+- CLASS_DEGREE >< STUDENTS (Is_part_of)
 
 un étudiant fait parti d'une et une seule classe
 
 une classe peut recenser un ou plusieurs étudiants
 
-- Etudiants >< Cours (Follow)
+- STUDENTS >< COURSES (Follow)
 
 un étudiant suit un ou plusieurs cours pour lesquels il reçoit une note
 
@@ -86,3 +86,5 @@ un cours peut être suivi par un ou plusieurs élèves qui reçoivent une note
 #### Notes et diffcultés :
 
 - La problématique principale se situe au niveau de l'association note entre étudiants et discipline. En effet, on considère ici qu'un étudiant suit effectivement et valide un cours par l'obtention d'une note (contrainte obligatoire). Pour nous aider dans l'établissement de cette association "suivre un cours" entre l'étudiant et la discipline on peut résumer l'association par une phrase contextuelle du type : "A l'issue d'un examen ou d'un contrôle surprise, la note de X/20 ou le score A,B,C...(Score, attribut et condition de "suivre un cours" ou "Follow") a été obtenue par un étudiant (Students) dans une matière (Courses) enseignée (Teach) par un enseignant(Teacher)".
+
+- Créer des entités "Class_degree" et "Instruments", permettra, suivant les objectifs poursuivis et d'un point de vue applicatif, de lancer des requêtes de recherche sur des étudiants par instruments ou par promotions. 
