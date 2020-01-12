@@ -47,22 +47,22 @@ On a besoin de conserver les informations concernant :
 - "Classe" [CLASS_DEGREE] qui reçoit comme attributs : ID, le niveau d'étude (de 1 à 5)
 - "Instruments" [INSTRUMENTS] qui reçoit comme attributs : ID, Type de l'instrument (noté Label)
 - "Salles de cours" [CLASSROOMS] qui reçoit comme attributs : ID, Nom, Capacité d'acceuil maximum
-- "Cours" [COURSES] qui reçoit comme attributs : ID, Nom (Label), Coefficient, date du cours
+- "Cours" [TEACHING] qui reçoit comme attributs : ID, Nom (Label), Coefficient
 - "Enseignants" [TEACHERS] qui reçoit comme attributs : ID, Nom, Prénom, Date de naissance
 
 #### A propos des associations :
 
-- TEACHERS >< COURSES (Teach)
+- TEACHERS >< TEACHING (Teach)
 
 un enseignant enseigne un à plusieurs cours
 
-un cours est enseigné par un et un seul enseignant
+un cours est enseigné par un et ou plusieurs enseignants
 
- - CLASSROOMS >< COURSES (Take_place)
+ - CLASSROOMS >< TEACHING (Courses_take_place @Date)
 
-un cours a lieu dans une et une seule salle de cours
+un cours a lieu dans une et une seule salle de cours à une date donnée
 
-une salle de cours peut donner lieu à un à plusieurs cours
+une salle de cours peut donner lieu à un à plusieurs cours selon la date donnée
 
 - INSTRUMENTS >< STUDENTS (Play)
 
@@ -76,15 +76,9 @@ un étudiant fait parti d'une et une seule classe
 
 une classe peut recenser un ou plusieurs étudiants
 
-- STUDENTS >< COURSES (Follow)
+- STUDENTS >< TEACHING (Follow @Score)
 
 un étudiant suit un ou plusieurs cours pour lesquels il reçoit une note
 
 un cours peut être suivi par un ou plusieurs élèves qui reçoivent une note
 
-
-#### Notes et diffcultés :
-
-- La problématique principale se situe au niveau de l'association note entre étudiants et discipline. En effet, on considère ici qu'un étudiant suit effectivement et valide un cours par l'obtention d'une note (contrainte obligatoire). Pour nous aider dans l'établissement de cette association "suivre un cours" entre l'étudiant et la discipline on peut résumer l'association par une phrase contextuelle du type : "A l'issue d'un examen ou d'un contrôle surprise, la note de X/20 ou le score A,B,C...(Score, attribut et condition de "suivre un cours" ou "Follow") a été obtenue par un étudiant (Students) dans une matière (Courses) enseignée (Teach) par un enseignant(Teacher)".
-
-- Créer des entités "Class_degree" et "Instruments", permettra, suivant les objectifs poursuivis et d'un point de vue applicatif, de lancer des requêtes de recherche sur des étudiants par instruments ou par promotions. 
